@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Form</title>
 </head>
+
 <body>
-    
+    <form action="" method="GET" class="form">
+        <fieldset>
+            <table>
+                <tbody>
+                    <legend>Formulario</legend>
+                    <tr>
+                        <td>Name:
+                            <input type="text" id="Name" placeholder="Name" title="Fill this space with your name" required pattern="[a-Z]"></td>
+                        <td>Email:
+                            <input type="email" id="email" placeholder="mail@this.com, obdu@that.com" size="35" multiple title="Zero or more addresses, separated with ','"
+                                required /></td>
+                        <td>Address:
+                            <input type="text" id="Address" placeholder="Address" required pattern="[a-Z]" minlength="10"></td>
+                    </tr>
+                    <tr>
+                        <td> Birthdate:
+                            <input type="date" id="Birthdate" required></td>
+                        <td>Password:
+                            <input type="password" placeholder="Password" id="password" required></td>
+                        <td> City:
+                            <input type="text" id="City" placeholder="City" required pattern="[a-Z]" minlength="10" title="City"></td>
+                    </tr>
+                    <tr>
+                        <td>Favorite Animal:
+                            <input type="text" id="FAnimal" placeholder="Favorite Animal"></td>
+                        <td>Verify Password
+                            <input type="password" placeholder="Confirm Password" id="confirm_password" required></td>
+                        <td>Country
+                            <input type="text" placeholder="El Salvador" id="Country" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            Phone Number:
+                            <input type="text" name="Phone Number" id="Phone Number" placeholder="22515696"required pattern="[0-9]{8}">
+                        </td>
+                    </tr>
+                    
+                    <script>var password = document.getElementById("password")
+                            , confirm_password = document.getElementById("confirm_password");
+                        function validatePassword() {
+                            if (password.value != confirm_password.value) {
+                                confirm_password.setCustomValidity("Passwords Don't Match");
+                            } else {
+                                confirm_password.setCustomValidity('');
+                            }
+                        }
+                        password.onchange = validatePassword;
+                        confirm_password.onkeyup = validatePassword;</script>
+                </tbody>
+            </table>
+            <input type="submit" value="submit">
+        </fieldset>
+    </form>
 </body>
+
 </html>
